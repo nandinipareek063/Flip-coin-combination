@@ -84,6 +84,9 @@ case $ch in
         echo  "tt: " $tt
         echo "ht :" $ht
         echo  "th: " $th
+	array=( [0]=$hh [1]=$tt [2]=$ht [3]=$th )
+	c=$( printf "%s\n" ${array[@]} | sort -nr )
+	echo "Sorting: " $c
         echo "percentage of HH: " $((( hh * 100 ) / num ))
         echo "percentage of TT: " $((( tt * 100 ) / num ))
         echo "percentage of HT: " $((( ht * 100 ) / num ))
@@ -156,15 +159,18 @@ case $ch in
         echo  "tth: " $tth
         echo "tht :" $tht
         echo  "thh: " $thh
+	array=( [0]=$hhh [1]=$hht [2]=$hth [3]=$htt [4]=$ttt [5]=$tth [6]=$tht [7]=$thh )
+	c=$( printf "%s\n" ${array[@]} | sort -nr )
+	echo "Sorting: " $c
 
-echo "percentage of HHH: " $((( hhh * 100 ) / num ))
-echo "percentage of HHT: " $((( hht * 100 ) / num ))
-echo "percentage of HTH: " $((( hth * 100 ) / num ))
-echo "percentage of HTT: " $((( htt * 100 ) / num ))
-echo "percentage of TTT: " $((( ttt * 100 ) / num ))
-echo "percentage of TTH: " $((( tth * 100 ) / num ))
-echo "percentage of THT: " $((( tht * 100 ) / num ))
-echo "percentage of THH: " $((( thh * 100 ) / num ))
+	echo "percentage of HHH: " $((( hhh * 100 ) / num ))
+	echo "percentage of HHT: " $((( hht * 100 ) / num ))
+	echo "percentage of HTH: " $((( hth * 100 ) / num ))
+	echo "percentage of HTT: " $((( htt * 100 ) / num ))
+	echo "percentage of TTT: " $((( ttt * 100 ) / num ))
+	echo "percentage of TTH: " $((( tth * 100 ) / num ))
+	echo "percentage of THT: " $((( tht * 100 ) / num ))
+	echo "percentage of THH: " $((( thh * 100 ) / num ))
 
 
 ;;
